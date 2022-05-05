@@ -22,34 +22,21 @@
         android:id="@+id/editTextConnexionPrenom"
         android:layout_width="227dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="324dp"
+        android:layout_marginBottom="396dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextInsNom"
         app:layout_constraintVertical_bias="0.057" />
 
-    <EditText
-        android:id="@+id/editTextConnexionNom"
-        android:layout_width="227dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.22" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="328dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="400dp"
         android:text="Mot de passe :"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,8 +49,8 @@
     <TextView
         android:layout_width="58dp"
         android:layout_height="23dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="428dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="560dp"
         android:includeFontPadding="false"
         android:text="Login :"
         android:textSize="16sp"
@@ -74,6 +61,19 @@
         app:layout_constraintTop_toTopOf="@+id/editTextInsNom"
         app:layout_constraintVertical_bias="0.043" />
 
+    <EditText
+        android:id="@+id/editTextConnexionNom"
+        android:layout_width="227dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.166" />
+
     <Button
         android:id="@+id/bouttonSinscrire"
         android:layout_width="167dp"
@@ -83,30 +83,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.717" />
 
     <ImageButton
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginStart="144dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="168dp"
+        android:background="@drawable/img4"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
+        app:layout_constraintVertical_bias="0.216" />
+
+    <ImageButton
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="128dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/img3"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
-        app:layout_constraintVertical_bias="0.157" />
-
-    <ImageButton
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="152dp"
-        android:background="@drawable/img4"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
-        app:layout_constraintVertical_bias="0.157" />
+        app:layout_constraintVertical_bias="0.216" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
