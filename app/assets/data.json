@@ -1,0 +1,25 @@
+{
+  "etudiants": [
+    {
+      "login":"18178278",
+      "mdp":"",
+      "name":"",
+      "niveau":"",
+      "formation":""
+    },
+    {
+      "login":"log2",
+      "mdp":"",
+      "name":"",
+      "niveau":"",
+      "formation":""
+    }
+  ],
+
+  "enseignants": [
+    {
+      "login":"7218128"
+    }
+  ]
+}
+

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnInscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, PageInscription.class);
+                Intent i = new Intent(MainActivity.this, PageCAS.class);
                 startActivity(i);
             }
         });
