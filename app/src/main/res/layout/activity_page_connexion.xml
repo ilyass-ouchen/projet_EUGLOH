@@ -3,61 +3,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentTop="false"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="222dp"
-        android:layout_height="194dp"
-        android:src="@drawable/img1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="262dp"
-        android:layout_height="141dp"
+        android:layout_width="401dp"
+        android:layout_height="138dp"
         android:src="@drawable/img2"
-        app:layout_constraintBottom_toTopOf="@+id/imageView1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.004" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="227dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.057" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="227dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.231" />
 
     <TextView
-        android:id="@+id/tv"
-        android:layout_width="308dp"
-        android:layout_height="118dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Bienvenue sur EUGLOH APP \n Campus Université \n Paris-Saclay"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1"
-        app:layout_constraintVertical_bias="0.056" />
-
-    <Button
-        android:id="@+id/bouttonInscription"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
-        android:text="Commencer"
+        android:text="Mot de passe :"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:layout_width="58dp"
+        android:layout_height="23dp"
+        android:includeFontPadding="false"
+        android:text="Login :"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <Button
+        android:id="@+id/boutonSinscrire"
+        android:layout_width="167dp"
+        android:layout_height="60dp"
+        android:text="Se connecter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.651" />
 
     <ImageButton
         android:layout_width="36dp"
@@ -68,31 +89,32 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bouttonInscription"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintTop_toBottomOf="@+id/boutonSinscrire"
+        app:layout_constraintVertical_bias="0.157" />
 
     <ImageButton
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginEnd="152dp"
         android:background="@drawable/img4"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bouttonInscription"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintTop_toBottomOf="@+id/boutonSinscrire"
+        app:layout_constraintVertical_bias="0.157" />
 
-    <ImageButton
-        android:id="@+id/boutonConnexion"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:background="@drawable/img5"
-        android:scaleType="fitXY"
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="227dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintVertical_bias="0.05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
