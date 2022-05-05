@@ -19,20 +19,21 @@
         app:layout_constraintVertical_bias="0.004" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextConnexionPrenom"
         android:layout_width="227dp"
         android:layout_height="42dp"
+        android:layout_marginBottom="324dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInsNom"
         app:layout_constraintVertical_bias="0.057" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextConnexionNom"
         android:layout_width="227dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -42,35 +43,39 @@
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.231" />
+        app:layout_constraintVertical_bias="0.22" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="328dp"
         android:text="Mot de passe :"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInsPrenom"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toTopOf="@+id/editTextInsPrenom"
         app:layout_constraintVertical_bias="0.044" />
 
     <TextView
         android:layout_width="58dp"
         android:layout_height="23dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="428dp"
         android:includeFontPadding="false"
         android:text="Login :"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInsNom"
         app:layout_constraintHorizontal_bias="0.325"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="@+id/editTextInsNom"
         app:layout_constraintVertical_bias="0.043" />
 
     <Button
-        android:id="@+id/boutonSinscrire"
+        android:id="@+id/bouttonSinscrire"
         android:layout_width="167dp"
         android:layout_height="60dp"
         android:text="Se connecter"
@@ -89,7 +94,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boutonSinscrire"
+        app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
         app:layout_constraintVertical_bias="0.157" />
 
     <ImageButton
@@ -101,20 +106,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boutonSinscrire"
+        app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
         app:layout_constraintVertical_bias="0.157" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="227dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

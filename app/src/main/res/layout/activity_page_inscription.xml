@@ -25,10 +25,10 @@
         android:text="Nom"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInsNom"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="@+id/editTextInsNom"
         app:layout_constraintVertical_bias="0.039" />
 
     <TextView
@@ -37,10 +37,10 @@
         android:text="Prénom"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInsPrenom"
         app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toTopOf="@+id/editTextInsPrenom"
         app:layout_constraintVertical_bias="0.046" />
 
     <TextView
@@ -49,10 +49,10 @@
         android:text="Université"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInsUniversite"
         app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toTopOf="@+id/editTextInsUniversite"
         app:layout_constraintVertical_bias="0.050" />
 
     <TextView
@@ -61,10 +61,10 @@
         android:text="Cursus"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInsCursus"
         app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toTopOf="@+id/editTextInsCursus"
         app:layout_constraintVertical_bias="0.055" />
 
     <TextView
@@ -73,14 +73,14 @@
         android:text="E-mail"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInsEmail"
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintTop_toTopOf="@+id/editTextInsEmail"
         app:layout_constraintVertical_bias="0.071" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextInsNom"
         android:layout_width="227dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -93,7 +93,7 @@
         app:layout_constraintVertical_bias="0.100000024" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextInsPrenom"
         android:layout_width="227dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -102,11 +102,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInsNom"
         app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextInsCursus"
         android:layout_width="227dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -115,11 +115,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInsUniversite"
         app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/editTextInsUniversite"
         android:layout_width="227dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -128,11 +128,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInsPrenom"
         app:layout_constraintVertical_bias="0.05" />
 
     <Button
-        android:id="@+id/boutonSinscrire"
+        android:id="@+id/bouttonSinscrire"
         android:layout_width="167dp"
         android:layout_height="60dp"
         android:text="Inscription"
@@ -151,7 +151,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boutonSinscrire"
+        app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
         app:layout_constraintVertical_bias="0.157" />
 
     <ImageButton
@@ -163,11 +163,11 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boutonSinscrire"
+        app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
         app:layout_constraintVertical_bias="0.157" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/editTextInsEmail"
         android:layout_width="227dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -176,7 +176,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInsCursus"
         app:layout_constraintVertical_bias="0.05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
