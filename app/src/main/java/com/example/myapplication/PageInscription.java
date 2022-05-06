@@ -10,6 +10,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class PageInscription extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +43,24 @@ public class PageInscription extends AppCompatActivity {
                         break;
                     }
                 }
-                if(sontVides==true) {
+                if(sontVides) {
+                    //try {
+                        // On écrit les infos dans json
+                        //JSONObject obj = new JSONObject();
+                        //obj.put("Name", "Crunchify.com");
+                        //obj.put("Author", "App Shah");
+
+                        //JSONArray company = new JSONArray();
+                        //company.put("Company: Facebook");
+                        //company.put("Company: PayPal");
+                        //company.put("Company: Google");
+                        //obj.put("Company List", company);
+
+                        // Constructs a FileWriter given a file name, using the platform's default charset
+                        // FileWriter file = new FileWriter("C:\\Users\\souam\\Documents\\projet_EUGLOH\\app\\test.txt");
+                        //file.write(obj.toString());
+                    //} catch(IOException | JSONException e) { e.printStackTrace(); }
+
                     Intent i = new Intent(PageInscription.this, PageConnexion.class);
                     startActivity(i);
                 }
