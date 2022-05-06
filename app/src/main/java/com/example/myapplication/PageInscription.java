@@ -32,7 +32,7 @@ public class PageInscription extends AppCompatActivity {
         EditText nom = findViewById(R.id.editTextInsNom);
         EditText prenom = findViewById(R.id.editTextInsPrenom);
         EditText universite = findViewById(R.id.editTextInsUniversite); // univ, cursus, mail
-        EditText cursus = findViewById(R.id.editTextInsCursus);
+        EditText cursus = findViewById(R.id.editTextInsDate);
         EditText mail = findViewById(R.id.editTextInsEmail);
         EditText[] liste = {nom,prenom,universite,cursus,mail}; // on met tous les champs dans une liste qu'on parcourera
 

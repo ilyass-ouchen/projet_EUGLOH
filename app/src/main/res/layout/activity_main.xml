@@ -37,7 +37,7 @@
         android:layout_height="118dp"
         android:layout_marginTop="24dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Bienvenue sur EUGLOH APP \n Campus Université \n Paris-Saclay"
+        android:text="@string/bienvenue"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/blue"
-        android:text="Commencer"
+        android:text="@string/auth"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,16 +62,18 @@
     <ImageButton
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginStart="144dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/img3"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bouttonInscription"
         app:layout_constraintVertical_bias="0.402" />
 
     <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"

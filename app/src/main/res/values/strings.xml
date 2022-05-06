@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Mon  Application</string>
+    <string name="auth">S\'authentifier</string>
+    <string name="login">Login</string>
+    <string name="log">Se connecter</string>
+    <string name="role">Rôle</string>
+    <string name="birthDate">Date de naissance</string>
+    <string name="inscription">Inscription</string>
+    <string name="fname">Prénom</string>
+    <string name="nom">Nom</string>
+    <string name="mail">E-mail</string>
+    <string name="university">Université</string>
+    <string name="degree">Filière</string>
+    <string name="password">Mot de passe</string>
+    <string name="bienvenue">Bienvenue sur EUGLOH APP Campus Université Paris Saclay</string>
 </resources>

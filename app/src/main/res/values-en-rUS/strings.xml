@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="login">Login</string>
+    <string name="role">Role</string>
+    <string name="birthDate">Date de naissance</string>
+    <string name="inscription">Register</string>
+    <string name="degree">degree</string>
+    <string name="bienvenue">Bienvenue sur EUGLOH APP Campus Université Paris Saclay</string>
+    <string name="auth">Log in</string>
+    <string name="log">Log in</string>
+    <string name="fname">First Name</string>
+    <string name="nom">Last Name</string>
+    <string name="mail">E-mail</string>
+    <string name="university">University</string>
+    <string name="password">Password</string>
+</resources>

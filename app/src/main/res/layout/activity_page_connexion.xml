@@ -13,21 +13,20 @@
         android:src="@drawable/img2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextConnexionMdp"
         android:layout_width="227dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="368dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextInsNom"
         app:layout_constraintVertical_bias="0.057"
@@ -41,83 +40,78 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintVertical_bias="0.308"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="58dp"
         android:layout_height="23dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="412dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="468dp"
         android:includeFontPadding="false"
-        android:text="Login :"
+        android:text="@string/login"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editTextInsNom"
         app:layout_constraintHorizontal_bias="0.325"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextInsNom"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.043"
+        tools:ignore="UnknownIdInLayout" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="296dp"
-        android:text="Mot de passe :"
+        android:layout_marginBottom="372dp"
+        android:text="@string/password"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editTextInsPrenom"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextInsPrenom"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.044"
+        tools:ignore="UnknownIdInLayout" />
 
     <Button
         android:id="@+id/bouttonSinscrire"
         android:layout_width="167dp"
         android:layout_height="60dp"
-        android:text="Se connecter"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.664" />
 
     <ImageButton
+        android:id="@+id/imageButton2"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="168dp"
+        android:layout_marginEnd="152dp"
         android:background="@drawable/img4"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
-        app:layout_constraintVertical_bias="0.216" />
+        app:layout_constraintVertical_bias="0.215" />
 
     <ImageButton
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginStart="128dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/img3"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bouttonSinscrire"
-        app:layout_constraintVertical_bias="0.216" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bon retour !"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="200dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.215" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
