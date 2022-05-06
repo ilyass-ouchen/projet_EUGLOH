@@ -37,4 +37,5 @@
         app:layout_constraintEnd_toEndOf="@+id/fb2"
         app:srcCompat="@drawable/ic_news"
         android:visibility="invisible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

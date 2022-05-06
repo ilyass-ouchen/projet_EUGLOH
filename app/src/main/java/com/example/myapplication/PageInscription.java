@@ -14,8 +14,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class PageInscription extends AppCompatActivity {
     @Override
@@ -44,23 +48,54 @@ public class PageInscription extends AppCompatActivity {
                     }
                 }
                 if(sontVides) {
-                    //try {
-                        // On écrit les infos dans json
-                        //JSONObject obj = new JSONObject();
-                        //obj.put("Name", "Crunchify.com");
-                        //obj.put("Author", "App Shah");
+                    try {
+                        JSONObject jo = new JSONObject();
 
-                        //JSONArray company = new JSONArray();
-                        //company.put("Company: Facebook");
-                        //company.put("Company: PayPal");
-                        //company.put("Company: Google");
-                        //obj.put("Company List", company);
+                        // putting data to JSONObject
+                        jo.put("firstName", "John");
+                        jo.put("lastName", "Smith");
+                        jo.put("age", 25);
 
-                        // Constructs a FileWriter given a file name, using the platform's default charset
-                        // FileWriter file = new FileWriter("C:\\Users\\souam\\Documents\\projet_EUGLOH\\app\\test.txt");
-                        //file.write(obj.toString());
-                    //} catch(IOException | JSONException e) { e.printStackTrace(); }
+                        // for address data, first create LinkedHashMap
+                        Map m = new LinkedHashMap(4);
+                        m.put("streetAddress", "21 2nd Street");
+                        m.put("city", "New York");
+                        m.put("state", "NY");
+                        m.put("postalCode", 10021);
 
+                        // putting address to JSONObject
+                        jo.put("address", m);
+
+                        // for phone numbers, first create JSONArray
+                        JSONArray ja = new JSONArray();
+
+                        m = new LinkedHashMap(2);
+                        m.put("type", "home");
+                        m.put("number", "212 555-1234");
+
+                        // adding map to list
+                        ja.put(m); //add
+
+                        m = new LinkedHashMap(2);
+                        m.put("type", "fax");
+                        m.put("number", "212 555-1234");
+
+                        // adding map to list
+                        ja.put(m); //add
+
+                        // putting phoneNumbers to JSONObject
+                        jo.put("phoneNumbers", ja);
+
+                        // writing JSON to file:"JSONExample.json" in cwd
+                        PrintWriter pw = new PrintWriter("app/test.json");
+                        pw.write(jo.toString());
+
+                        pw.flush();
+                        pw.close();
+                    }
+                    catch (JSONException | FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     Intent i = new Intent(PageInscription.this, PageConnexion.class);
                     startActivity(i);
                 }
