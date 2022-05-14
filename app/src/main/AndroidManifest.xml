@@ -16,14 +16,9 @@
             android:label="Menu">
         </activity>
         <activity
-            android:name=".PageInscription"
+            android:name=".ConnexionCAS"
             android:exported="false"
-            android:label="PageInscription">
-        </activity>
-        <activity
-            android:name=".PageConnexion"
-            android:exported="false"
-            android:label="PageConnexion">
+            android:label="ConnexionCAS">
         </activity>
         <activity
             android:name=".MainActivity"
