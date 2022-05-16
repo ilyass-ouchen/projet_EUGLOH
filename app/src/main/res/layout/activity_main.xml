@@ -9,20 +9,19 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="222dp"
-        android:layout_height="194dp"
+        android:layout_width="291dp"
+        android:layout_height="248dp"
         android:src="@drawable/img1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="262dp"
-        android:layout_height="141dp"
+        android:layout_width="343dp"
+        android:layout_height="156dp"
         android:src="@drawable/img2"
         app:layout_constraintBottom_toTopOf="@+id/imageView1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +34,7 @@
         android:id="@+id/tv"
         android:layout_width="308dp"
         android:layout_height="118dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Bienvenue sur EUGLOH APP \n Campus Université \n Paris-Saclay"
         android:textSize="24sp"
@@ -49,50 +48,53 @@
 
     <Button
         android:id="@+id/boutonCommencer"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/blue"
+        android:layout_width="162dp"
+        android:layout_height="53dp"
+        android:background="@color/light_blue_900"
         android:text="Commencer"
+        app:backgroundTint="@color/light_blue_900"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.169" />
 
     <ImageButton
+        android:id="@+id/imageLangueFr"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="145dp"
         android:background="@drawable/img3"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageLangueAng"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bouttonInscription"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintTop_toBottomOf="@+id/boutonCommencer"
+        app:layout_constraintVertical_bias="0.448" />
 
     <ImageButton
+        android:id="@+id/imageLangueAng"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginEnd="145dp"
         android:background="@drawable/img4"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bouttonInscription"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintTop_toBottomOf="@+id/boutonCommencer"
+        app:layout_constraintVertical_bias="0.448" />
 
     <ImageButton
         android:id="@+id/boutonConnexion"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="56dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/img5"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 

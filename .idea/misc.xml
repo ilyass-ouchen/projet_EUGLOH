@@ -6,6 +6,7 @@
         <entry key="..\:/Users/Ounas/AndroidStudioProjects/EuglohApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Ounas/AndroidStudioProjects/EuglohApp/app/src/main/res/layout/activity_menu.xml" value="0.33" />
         <entry key="..\:/Users/Ounas/AndroidStudioProjects/EuglohApp/app/src/main/res/layout/activity_page_inscription.xml" value="0.3170289855072464" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/insta/projet_EUGLOH/app/src/main/res/layout/activity_connexion_cas.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/insta/projet_EUGLOH/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/insta/projet_EUGLOH/app/src/main/res/layout/activity_menu.xml" value="0.29743589743589743" />
@@ -17,6 +18,17 @@
         <entry key="..\:/Users/souam/Documents/projet_EUGLOH/app/src/main/res/layout/activity_page_connexion.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/souam/Documents/projet_EUGLOH/app/src/main/res/layout/activity_page_inscription.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/souam/Documents/projet_EUGLOH/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
+=======
+        <entry key="..\:/Users/Ounas/AndroidStudioProjects/projet_EUGLOH/app/src/main/res/layout/activity_connexion_CAS.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/Ounas/AndroidStudioProjects/projet_EUGLOH/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/Ounas/AndroidStudioProjects/projet_EUGLOH/app/src/main/res/layout/activity_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Ounas/AndroidStudioProjects/projet_EUGLOH/app/src/main/res/layout/activity_test.xml" value="0.3484375" />
+        <entry key="..\:/Users/Ounas/AndroidStudioProjects/projet_EUGLOH/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2535" />
+        <entry key="..\:/Users/insta/projet_EUGLOH/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/insta/projet_EUGLOH/app/src/main/res/layout/activity_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/insta/projet_EUGLOH/app/src/main/res/layout/activity_page_connexion.xml" value="0.3625" />
+        <entry key="..\:/Users/insta/projet_EUGLOH/app/src/main/res/layout/activity_page_inscription.xml" value="0.25" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

@@ -37,4 +37,15 @@
         app:layout_constraintEnd_toEndOf="@+id/fb2"
         app:srcCompat="@drawable/ic_news"
         android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/editTextContainer"
+        android:layout_width="409dp"
+        android:layout_height="513dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/fb3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
