@@ -9,17 +9,27 @@
         android:label="EuglohApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication" >
+        android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".PropositionNews"
+            android:exported="false" />
+        <activity
+            android:name=".PropositionEvenements"
+            android:exported="false" />
+        <activity
+            android:name=".PageNews"
+            android:exported="false" />
+        <activity
+            android:name=".PageEvenements"
+            android:exported="false" />
         <activity
             android:name=".Menu"
             android:exported="false"
-            android:label="Menu" >
-        </activity>
+            android:label="Menu" />
         <activity
             android:name=".ConnexionCAS"
             android:exported="false"
-            android:label="ConnexionCAS" >
-        </activity>
+            android:label="ConnexionCAS" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

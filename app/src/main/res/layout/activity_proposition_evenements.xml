@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/img2" />
+
+    <EditText
+        android:id="@+id/editTextTitreEvents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Titre"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextLocalisationEvents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Localisation"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextGroupeEvents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Groupe cible"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextHostEvents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Host"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextDateEvents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Date"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextDateLimiteEvents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Date Limite"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextDescriptionEvents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Decription"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/buttonProposerEvent"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:elevation="4dp"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:text="Proposer l'evenement"
+        android:textColor="#fff"
+        app:backgroundTint="@color/light_blue_900" />
+
+</LinearLayout>
