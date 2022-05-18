@@ -5,12 +5,14 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,8 +35,6 @@ public class PropositionEvenements extends AppCompatActivity {
     EditText description;
     Button btnProposerEvent;
 
-    /*FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("events");*/
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,32 +63,52 @@ public class PropositionEvenements extends AppCompatActivity {
                 String sDatelimite = datelimite.getText().toString();
                 String sDescription = description.getText().toString();
 
-                Map<String, Object> user = new HashMap<>();
-                user.put("Titre", sTitre);
-                user.put("Date", sDate);
-                user.put("Localisation", sLocalisation);
-                user.put("GroupeCible", sGroupeCible);
-                user.put("Host", sHost);
-                user.put("DateLimite", sDatelimite);
-                user.put("Description", sDescription);
-                // Add a new document with a generated ID
+                Evenements evenements = new Evenements(sTitre, sDate, sLocalisation, sGroupeCible, sHost, sDatelimite, sDescription);
+                // Ajout de l'evenement à FireStore
                 db.collection("Events")
-                        .add(user)
+                        .add(evenements)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                // Suppression du contenu des champs de saisie
+                                titre.getText().clear();
+                                date.getText().clear();
+                                localisation.getText().clear();
+                                groupecible.getText().clear();
+                                hebergeur.getText().clear();
+                                datelimite.getText().clear();
+                                description.getText().clear();
+
+                                Context context = getApplicationContext();
+                                CharSequence text = "Proposition réalisée avec succés !";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                // Affichage d'un message de succés
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error adding document", e);
+                                // Suppression du contenu des champs de saisie
+                                titre.getText().clear();
+                                date.getText().clear();
+                                localisation.getText().clear();
+                                groupecible.getText().clear();
+                                hebergeur.getText().clear();
+                                datelimite.getText().clear();
+                                description.getText().clear();
+
+                                // Affichage d'un message d'erreur
+                                Context context = getApplicationContext();
+                                CharSequence text = "Une erreur s'est produite, veuillez réessayer";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
                             }
                         });
-
-                /*Evenements evenements = new Evenements(sTitre, sDate, sLocalisation, sGroupeCible, sHost, sDatelimite, sDescription);
-                myRef.push().setValue(evenements);*/
             }
         });
     }
