@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Menu extends AppCompatActivity {
     Animation rotateOpen, rotateClose, fromBottom, toBottom ;
-    FloatingActionButton fb1, fb2, fb3;
+    FloatingActionButton fb1, fb2, fb3, deco;
     Boolean clicked = false;
 
     @Override
@@ -38,6 +39,15 @@ public class Menu extends AppCompatActivity {
         fb1 = (FloatingActionButton) findViewById(R.id.fb1);
         fb2 = (FloatingActionButton) findViewById(R.id.fb2);
         fb3 = (FloatingActionButton) findViewById(R.id.fb3);
+        deco = (FloatingActionButton) findViewById(R.id.deco);
+
+        deco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Menu.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
 
         // Recupération des données de l'utilisateurs envoyé par ConnexionCAS
         Bundle extras = getIntent().getExtras();
@@ -96,11 +106,13 @@ public class Menu extends AppCompatActivity {
         if(!clicked){
             fb2.startAnimation(fromBottom);
             fb3.startAnimation(fromBottom);
+            deco.startAnimation(fromBottom);
             fb1.startAnimation(rotateOpen);
         }
         else{
             fb2.startAnimation(toBottom);
             fb3.startAnimation(toBottom);
+            deco.startAnimation(toBottom);
             fb1.startAnimation(rotateClose);
         }
     }
@@ -109,10 +121,12 @@ public class Menu extends AppCompatActivity {
         if(!clicked){
             fb2.setVisibility(View.VISIBLE);
             fb3.setVisibility(View.VISIBLE);
+            deco.setVisibility(View.VISIBLE);
         }
         else{
             fb2.setVisibility(View.INVISIBLE);
             fb3.setVisibility(View.INVISIBLE);
+            deco.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -120,10 +134,12 @@ public class Menu extends AppCompatActivity {
         if(!clicked){
             fb2.setClickable(true);
             fb3.setClickable(true);
+            deco.setClickable(true);
         }
         else{
             fb2.setClickable(false);
             fb3.setClickable(false);
+            deco.setClickable(false);
         }
     }
 

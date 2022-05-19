@@ -38,6 +38,17 @@
         app:srcCompat="@drawable/ic_news"
         android:visibility="invisible" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/fb3"
+        app:layout_constraintEnd_toEndOf="@+id/fb3"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        android:visibility="invisible" />
+
     <LinearLayout
         android:id="@+id/editTextContainer"
         android:layout_width="409dp"
