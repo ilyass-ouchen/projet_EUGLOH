@@ -6,47 +6,21 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".PageEvenements">
 
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/fb1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="16dp"
-    android:layout_marginBottom="16dp"
-    android:clickable="true"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:srcCompat="@drawable/ic_menu" />
-
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/fb2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:clickable="true"
-    app:layout_constraintBottom_toTopOf="@+id/fb1"
-    app:layout_constraintEnd_toEndOf="@+id/fb1"
-    app:srcCompat="@drawable/ic_baseline_event_24"
-    android:visibility="invisible" />
-
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/fb3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:clickable="true"
-    app:layout_constraintBottom_toTopOf="@+id/fb2"
-    app:layout_constraintEnd_toEndOf="@+id/fb2"
-    app:srcCompat="@drawable/ic_news"
-    android:visibility="invisible" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="1dp" />
 
     <WebView
         android:id="@+id/webViewEvents"
-        android:layout_width="409dp"
-        android:layout_height="513dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/fb3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </WebView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

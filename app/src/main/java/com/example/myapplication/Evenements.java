@@ -1,15 +1,12 @@
 package com.example.myapplication;
 
 public class Evenements {
-    private String titre;
-    private String date;
-    private String localisation;
-    private String groupeCible;
-    private String host;
-    private String dateLimite;
-    private String description;
+    String titre, date, localisation, groupeCible, host, dateLimite, description;
 
-    // Constructeur de la classe Evenements
+    // Constructeurs de la classe Evenements
+
+    public Evenements() {}
+
     public Evenements(String titre, String date, String localisation, String groupeCible, String host, String dateLimite, String description) {
         this.titre = titre;
         this.date = date;
@@ -47,5 +44,34 @@ public class Evenements {
 
     public String getDescription() {
         return description;
+    }
+
+    // Accesseurs Set
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setLocalisation(String localisation) {
+        this.localisation = localisation;
+    }
+
+    public void setGroupeCible(String groupeCible) {
+        this.groupeCible = groupeCible;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public void setDateLimite(String dateLimite) {
+        this.dateLimite = dateLimite;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

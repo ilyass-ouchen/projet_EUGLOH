@@ -54,7 +54,7 @@ public class PageNews extends AppCompatActivity {
                                                 }
                                             }
                                     );
-                                    // Récupération du lien vers la desctiption du site sur le site Eugloh
+                                    // Récupération des liens qui mènent aux descriptions des news du site Eugloh
                                     view.evaluateJavascript("document.getElementsByClassName(\"mb-8\")[" + i + "].childNodes[1].children[1].getElementsByClassName(\"h4 mb-3\")[0].getElementsByTagName(\"a\")[0].getAttribute(\"href\")",
                                             new ValueCallback<String>() {
                                                 @Override

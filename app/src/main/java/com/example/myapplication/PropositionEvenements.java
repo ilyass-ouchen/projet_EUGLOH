@@ -65,7 +65,7 @@ public class PropositionEvenements extends AppCompatActivity {
 
                 Evenements evenements = new Evenements(sTitre, sDate, sLocalisation, sGroupeCible, sHost, sDatelimite, sDescription);
                 // Ajout de l'evenement à FireStore
-                db.collection("Events")
+                db.collection("ProposedEvents")
                         .add(evenements)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
