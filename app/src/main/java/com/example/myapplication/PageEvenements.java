@@ -23,6 +23,7 @@ import android.webkit.CookieSyncManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -206,12 +207,11 @@ public class PageEvenements extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         EventChangeListener();
 
+        // MENU
         fb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(PageEvenements.this, PageEvenements.class);
-                startActivity(i);
-                finish();
+                Toast.makeText(PageEvenements.this, "Vous êtes déjà sur la page des evenements !", Toast.LENGTH_SHORT).show();
             }
         });
 

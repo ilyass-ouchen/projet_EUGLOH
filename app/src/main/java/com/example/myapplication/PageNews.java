@@ -15,11 +15,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -52,6 +54,22 @@ public class PageNews extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_news);
         getSupportActionBar().hide();
+
+        rotateOpen = AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim);
+        rotateClose = AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim);
+        fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim);
+        toBottom = AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim);
+        fromRight = AnimationUtils.loadAnimation(this, R.anim.from_right_anim);
+        toRight = AnimationUtils.loadAnimation(this, R.anim.to_right_anim);
+
+        fb1 = (FloatingActionButton) findViewById(R.id.boutonMenu);
+        fb2 = (FloatingActionButton) findViewById(R.id.boutonEvents);
+        fb3 = (FloatingActionButton) findViewById(R.id.boutonNews);
+        fb4 = (FloatingActionButton) findViewById(R.id.boutonPropositionEvent);
+        fb5 = (FloatingActionButton) findViewById(R.id.boutonPropositionNews);
+        fb6 = (FloatingActionButton) findViewById(R.id.boutonVerifierEvent);
+        fb7 = (FloatingActionButton) findViewById(R.id.boutonVerifierNews);
+        deco = (FloatingActionButton) findViewById(R.id.boutonDeconnexion);
 
         // Suppression de tout les evenements stocké dans FireStore
         db.collection("News").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -160,7 +178,8 @@ public class PageNews extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         EventChangeListener();
 
-        fb1.setOnClickListener(new View.OnClickListener() {
+        // MENU
+        fb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(PageNews.this, PageEvenements.class);
@@ -169,16 +188,14 @@ public class PageNews extends AppCompatActivity {
             }
         });
 
-        fb2.setOnClickListener(new View.OnClickListener() {
+        fb3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(PageNews.this, PageNews.class);
-                startActivity(i);
-                finish();
+                Toast.makeText(PageNews.this, "Vous êtes déjà sur la page des news !", Toast.LENGTH_SHORT).show();
             }
         });
 
-        fb3.setOnClickListener(new View.OnClickListener() {
+        fb4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(PageNews.this, PropositionEvenements.class);
@@ -187,19 +204,11 @@ public class PageNews extends AppCompatActivity {
             }
         });
 
-        fb4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(PageNews.this, PropositionNews.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
         fb5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(PageNews.this, ValidationEvents.class);
+
+                Intent i = new Intent(PageNews.this, PropositionNews.class);
                 startActivity(i);
                 finish();
             }
@@ -208,7 +217,8 @@ public class PageNews extends AppCompatActivity {
         fb6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(PageNews.this, ValidationNews.class);
+
+                Intent i = new Intent(PageNews.this, ValidationEvents.class);
                 startActivity(i);
                 finish();
             }
@@ -217,7 +227,9 @@ public class PageNews extends AppCompatActivity {
         fb7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(PageNews.this, ValidationNews.class);
+                startActivity(i);
+                finish();
             }
         });
 
