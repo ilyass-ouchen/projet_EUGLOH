@@ -66,8 +66,18 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
         holder.boutonSinscrire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Mailer.send("euglohsystem@gmail.com","euglohsystemYACINEOUNASILYASS","euglohsystem@gmail.com",
-                        "Demande d'inscription à un evenement","Un étudiant souhaite s'inscrire à l'évenement");
+                Thread gfgThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try  {
+                            Mailer.send("euglohsystem@gmail.com","euglohsystemYACINEOUNASILYASS","ounasyhia27@gmail.com","Demande d'inscription à un evenement","Un étudiant souhaite s'inscrire à l'évenement");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+                gfgThread.start();
             }
         });
     }
