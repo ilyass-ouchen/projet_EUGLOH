@@ -1,4 +1,4 @@
-package com.example.myapplication;
+/*package com.example.myapplication;
 
 import java.util.Properties;
 import javax.mail.*;
@@ -32,4 +32,4 @@ public class Mailer{
         } catch (MessagingException e) {throw new RuntimeException(e);}
 
     }
-}
+}*/
