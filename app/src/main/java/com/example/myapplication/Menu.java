@@ -4,6 +4,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -41,13 +42,27 @@ public class Menu extends AppCompatActivity {
         fb3 = (FloatingActionButton) findViewById(R.id.fb3);
         deco = (FloatingActionButton) findViewById(R.id.deco);
 
+
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                Thread gfgThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Mailer.send(Utils.EMAIL,Utils.PASSWORD,Utils.EMAIL,"EUGLOH","yo");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                gfgThread.start();
                 Intent i = new Intent(Menu.this, MainActivity.class);
                 startActivity(i);
             }
         });
+
+
 
         // Recupération des données de l'utilisateurs envoyé par ConnexionCAS
         Bundle extras = getIntent().getExtras();
