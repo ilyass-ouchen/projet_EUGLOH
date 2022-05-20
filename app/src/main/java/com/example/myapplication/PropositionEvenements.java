@@ -62,8 +62,9 @@ public class PropositionEvenements extends AppCompatActivity {
                 String sHost = hebergeur.getText().toString();
                 String sDatelimite = datelimite.getText().toString();
                 String sDescription = description.getText().toString();
+                Boolean sValide = false;
 
-                Evenements evenements = new Evenements(sTitre, sDate, sLocalisation, sGroupeCible, sHost, sDatelimite, sDescription);
+                Evenements evenements = new Evenements(sTitre, sDate, sLocalisation, sGroupeCible, sHost, sDatelimite, sDescription, sValide);
                 // Ajout de l'evenement à FireStore
                 db.collection("ProposedEvents")
                         .add(evenements)

@@ -47,7 +47,7 @@ public class PropositionNews extends AppCompatActivity {
                 News news = new News(sTitre, sDate, sDescription);
 
                 // Ajout de la news à FireStore
-                db.collection("News")
+                db.collection("ProposedNews")
                         .add(news)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override

@@ -36,14 +36,6 @@ public class ConnexionCAS extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.myWebView);
 
-        // Suppression du Cache/Historique/Cookies de la webview
-        CookieManager.getInstance().removeAllCookies(null);
-        CookieManager.getInstance().flush();
-        webView.clearCache(true);
-        webView.clearFormData();
-        webView.clearHistory();
-        webView.clearSslPreferences();
-
         // Ajout des autorisations pour réaliser des commandes JavaScript sur la WebView
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);

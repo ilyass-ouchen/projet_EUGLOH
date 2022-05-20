@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ValidationNews"
+            android:exported="false" />
+        <activity
+            android:name=".ValidationEvents"
+            android:exported="false" />
+        <activity
             android:name=".PropositionNews"
             android:exported="false" />
         <activity

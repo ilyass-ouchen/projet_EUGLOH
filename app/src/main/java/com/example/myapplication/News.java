@@ -1,11 +1,12 @@
 package com.example.myapplication;
 
 public class News {
-    private String titre;
-    private String date;
-    private String description;
+    String titre, date, description;
 
     // Constructeur de la classe News
+
+    public News(){}
+
     public News(String titre, String date, String description) {
         this.titre = titre;
         this.date = date;
@@ -23,5 +24,18 @@ public class News {
 
     public String getDescription() {
         return description;
+    }
+
+    // Accesseurs Set
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -39,7 +39,7 @@ public class PageEvenements extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     RecyclerView recyclerView;
     ArrayList<Evenements> eventArrayList;
-    MyAdapter myAdapter;
+    MyAdapterEvents myAdapter;
     ProgressDialog progressDialog;
 
     @Override
@@ -56,6 +56,25 @@ public class PageEvenements extends AppCompatActivity {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         db.collection("Events").document(document.getId())
                                 .delete();
+                    }
+                } else {
+                    Log.d(TAG, "Une erreur s'est produite: ", task.getException());
+                }
+            }
+        });
+
+        // Ajout des evenement validé par l'administrateur à la collection Events
+        db.collection("AcceptedEvents").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Evenements evenements = new Evenements(document.getString("titre"),
+                                document.getString("date"), document.getString("localisation"),
+                                document.getString("groupeCible"), document.getString("host"),
+                                document.getString("dateLimite"), document.getString("description"));
+                        db.collection("Events")
+                                .add(evenements);
                     }
                 } else {
                     Log.d(TAG, "Une erreur s'est produite: ", task.getException());
@@ -143,17 +162,18 @@ public class PageEvenements extends AppCompatActivity {
         });
         // Chargement de la page des events du site Eugloh
         webViewEvents.loadUrl("https://www.eugloh.eu/study-and-mobility/events");
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Fetching Data ...");
+        progressDialog.setMessage("Chargement des données ...");
         progressDialog.show();
 
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerViewEvents);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         eventArrayList = new ArrayList<Evenements>();
-        myAdapter = new MyAdapter(PageEvenements.this, eventArrayList);
+        myAdapter = new MyAdapterEvents(PageEvenements.this, eventArrayList);
 
         recyclerView.setAdapter(myAdapter);
         EventChangeListener();
@@ -209,8 +229,9 @@ public class PageEvenements extends AppCompatActivity {
             dl = "";
         }
         else {
-            if (titreR != "")
+            if (titreR != "") {
                 titre = titreR;
+            }
             if (descriptionR != "") {
                 description = descriptionR;
             }

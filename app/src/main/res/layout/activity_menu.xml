@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb1"
+        android:id="@+id/boutonMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -14,49 +14,175 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_menu" />
+        app:srcCompat="@drawable/ic_baseline_add_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb2"
+        android:id="@+id/boutonEvents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/fb1"
-        app:layout_constraintEnd_toEndOf="@+id/fb1"
-        app:srcCompat="@drawable/ic_baseline_event_24"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/boutonMenu"
+        app:layout_constraintEnd_toEndOf="@+id/boutonMenu"
+        app:srcCompat="@drawable/ic_baseline_event_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb3"
+        android:id="@+id/boutonNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/fb2"
-        app:layout_constraintEnd_toEndOf="@+id/fb2"
-        app:srcCompat="@drawable/ic_news"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/boutonEvents"
+        app:layout_constraintEnd_toEndOf="@+id/boutonEvents"
+        app:srcCompat="@drawable/ic_baseline_newspaper_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/deco"
+        android:id="@+id/boutonPropositionEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/fb3"
-        app:layout_constraintEnd_toEndOf="@+id/fb3"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/boutonNews"
+        app:layout_constraintEnd_toEndOf="@+id/boutonNews"
+        app:srcCompat="@drawable/ic_edit_calendar_fill0_wght400_grad0_opsz48" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/boutonPropositionNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/boutonPropositionEvent"
+        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionEvent"
+        app:srcCompat="@drawable/ic_post_add_fill0_wght400_grad0_opsz48" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/boutonVerifierEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/boutonPropositionNews"
+        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionNews"
+        app:srcCompat="@drawable/ic_event_available_fill0_wght400_grad0_opsz48" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/boutonVerifierNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/boutonVerifierEvent"
+        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierEvent"
+        app:srcCompat="@drawable/ic_task_fill0_wght400_grad0_opsz48" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/boutonDeconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/boutonVerifierNews"
+        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierNews"
+        app:srcCompat="@drawable/ic_baseline_exit_to_app_24" />
 
     <LinearLayout
         android:id="@+id/editTextContainer"
-        android:layout_width="409dp"
-        android:layout_height="513dp"
+        android:layout_width="414dp"
+        android:layout_height="295dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/fb3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>*/
+
+    <TextView
+        android:id="@+id/tvInfo1"
+        android:layout_width="222dp"
+        android:layout_height="23dp"
+        android:text="CONSULTER LES EVENEMENTS"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonEvents"
+        app:layout_constraintEnd_toEndOf="@+id/boutonEvents"
+        app:layout_constraintTop_toTopOf="@+id/boutonEvents" />
+
+    <TextView
+        android:id="@+id/tvInfo2"
+        android:layout_width="222dp"
+        android:layout_height="23dp"
+        android:text="CONSULTER LES NEWS"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonNews"
+        app:layout_constraintEnd_toEndOf="@+id/boutonNews"
+        app:layout_constraintTop_toTopOf="@+id/boutonNews" />
+
+    <TextView
+        android:id="@+id/tvInfo3"
+        android:layout_width="222dp"
+        android:layout_height="23dp"
+        android:text="PROPOSER UN EVENEMENT"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonPropositionEvent"
+        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionEvent"
+        app:layout_constraintTop_toTopOf="@+id/boutonPropositionEvent" />
+
+    <TextView
+        android:id="@+id/tvInfo4"
+        android:layout_width="222dp"
+        android:layout_height="23dp"
+        android:text="PROPOSER UNE NEWS"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonPropositionNews"
+        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionNews"
+        app:layout_constraintTop_toTopOf="@+id/boutonPropositionNews" />
+
+    <TextView
+        android:id="@+id/tvInfo5"
+        android:layout_width="222dp"
+        android:layout_height="23dp"
+        android:text="DECONNEXION"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonDeconnexion"
+        app:layout_constraintEnd_toEndOf="@+id/boutonDeconnexion"
+        app:layout_constraintTop_toTopOf="@+id/boutonDeconnexion" />
+
+    <TextView
+        android:id="@+id/tvInfo6"
+        android:layout_width="222dp"
+        android:layout_height="23dp"
+        android:text="VERIFIER UNE NEWS"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonVerifierNews"
+        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierNews"
+        app:layout_constraintTop_toTopOf="@+id/boutonVerifierNews" />
+
+    <TextView
+        android:id="@+id/tvInfo7"
+        android:layout_width="222dp"
+        android:layout_height="23dp"
+        android:text="VERIFIER UN EVENEMENT"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonVerifierEvent"
+        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierEvent"
+        app:layout_constraintTop_toTopOf="@+id/boutonVerifierEvent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
