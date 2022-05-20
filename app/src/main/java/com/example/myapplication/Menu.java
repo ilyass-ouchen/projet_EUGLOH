@@ -18,14 +18,19 @@ import android.webkit.CookieSyncManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
+
+import org.intellij.lang.annotations.JdkConstants;
 
 public class Menu extends AppCompatActivity {
-    Animation rotateOpen, rotateClose, fromBottom, toBottom ;
+    Animation rotateOpen, rotateClose, fromBottom, toBottom, fromRight, toRight ;
     FloatingActionButton fb1, fb2, fb3, fb4, fb5, fb6, fb7, deco;
-    TextView tv1, tv2, tv3, tv4, tv5, tv6, tv7;
     Boolean clicked = false;
 
     @Override
@@ -39,6 +44,8 @@ public class Menu extends AppCompatActivity {
         rotateClose = AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim);
         fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim);
         toBottom = AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim);
+        fromRight = AnimationUtils.loadAnimation(this, R.anim.from_right_anim);
+        toRight = AnimationUtils.loadAnimation(this, R.anim.to_right_anim);
 
         fb1 = (FloatingActionButton) findViewById(R.id.boutonMenu);
         fb2 = (FloatingActionButton) findViewById(R.id.boutonEvents);
@@ -48,14 +55,16 @@ public class Menu extends AppCompatActivity {
         fb6 = (FloatingActionButton) findViewById(R.id.boutonVerifierEvent);
         fb7 = (FloatingActionButton) findViewById(R.id.boutonVerifierNews);
         deco = (FloatingActionButton) findViewById(R.id.boutonDeconnexion);
+        YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
+        getLifecycle().addObserver(youTubePlayerView);
 
-        tv1 = (TextView) findViewById(R.id.tvInfo1);
-        tv2 = (TextView) findViewById(R.id.tvInfo2);
-        tv3 = (TextView) findViewById(R.id.tvInfo3);
-        tv4 = (TextView) findViewById(R.id.tvInfo4);
-        tv5 = (TextView) findViewById(R.id.tvInfo5);
-        tv6 = (TextView) findViewById(R.id.tvInfo6);
-        tv7 = (TextView) findViewById(R.id.tvInfo7);
+        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            @Override
+            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                String videoId = "38paGBlFn9g";
+                youTubePlayer.loadVideo(videoId, 0);
+            }
+        });
 
         // Recupération des données de l'utilisateurs envoyé par ConnexionCAS
         Bundle extras = getIntent().getExtras();
@@ -99,7 +108,7 @@ public class Menu extends AppCompatActivity {
         tvAccueil.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         tvAccueil.setPadding(20, 20, 20, 20);
         tvAccueil.setTextSize(30);
-        tvAccueil.setGravity(Gravity.CENTER);
+        tvAccueil.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         tvAccueil.setTypeface(null, Typeface.BOLD_ITALIC);
 
         if (linearLayout != null) {
@@ -138,38 +147,22 @@ public class Menu extends AppCompatActivity {
         if(!clicked){
             fb2.startAnimation(fromBottom);
             fb3.startAnimation(fromBottom);
-            fb4.startAnimation(fromBottom);
-            fb5.startAnimation(fromBottom);
-            fb6.startAnimation(fromBottom);
-            fb7.startAnimation(fromBottom);
+            fb4.startAnimation(fromRight);
+            fb5.startAnimation(fromRight);
+            fb6.startAnimation(fromRight);
+            fb7.startAnimation(fromRight);
             deco.startAnimation(fromBottom);
-
-            tv1.startAnimation(fromBottom);
-            tv2.startAnimation(fromBottom);
-            tv3.startAnimation(fromBottom);
-            tv4.startAnimation(fromBottom);
-            tv5.startAnimation(fromBottom);
-            tv6.startAnimation(fromBottom);
-            tv7.startAnimation(fromBottom);
 
             fb1.startAnimation(rotateOpen);
         }
         else{
             fb2.startAnimation(toBottom);
             fb3.startAnimation(toBottom);
-            fb4.startAnimation(toBottom);
-            fb5.startAnimation(toBottom);
-            fb6.startAnimation(toBottom);
-            fb7.startAnimation(toBottom);
+            fb4.startAnimation(toRight);
+            fb5.startAnimation(toRight);
+            fb6.startAnimation(toRight);
+            fb7.startAnimation(toRight);
             deco.startAnimation(toBottom);
-
-            tv1.startAnimation(toBottom);
-            tv2.startAnimation(toBottom);
-            tv3.startAnimation(toBottom);
-            tv4.startAnimation(toBottom);
-            tv5.startAnimation(toBottom);
-            tv6.startAnimation(toBottom);
-            tv7.startAnimation(toBottom);
 
             fb1.startAnimation(rotateClose);
         }
@@ -185,13 +178,6 @@ public class Menu extends AppCompatActivity {
             fb7.setVisibility(View.VISIBLE);
             deco.setVisibility(View.VISIBLE);
 
-            tv1.setVisibility(View.VISIBLE);
-            tv2.setVisibility(View.VISIBLE);
-            tv3.setVisibility(View.VISIBLE);
-            tv4.setVisibility(View.VISIBLE);
-            tv5.setVisibility(View.VISIBLE);
-            tv6.setVisibility(View.VISIBLE);
-            tv7.setVisibility(View.VISIBLE);
         }
         else{
             fb2.setVisibility(View.INVISIBLE);
@@ -202,13 +188,6 @@ public class Menu extends AppCompatActivity {
             fb7.setVisibility(View.INVISIBLE);
             deco.setVisibility(View.INVISIBLE);
 
-            tv1.setVisibility(View.INVISIBLE);
-            tv2.setVisibility(View.INVISIBLE);
-            tv3.setVisibility(View.INVISIBLE);
-            tv4.setVisibility(View.INVISIBLE);
-            tv5.setVisibility(View.INVISIBLE);
-            tv6.setVisibility(View.INVISIBLE);
-            tv7.setVisibility(View.INVISIBLE);
         }
     }
 

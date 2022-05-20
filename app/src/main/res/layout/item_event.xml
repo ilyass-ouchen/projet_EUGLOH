@@ -172,7 +172,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/boutonSinscrire"
+            android:id="@+id/boutonSinscrireEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="S'inscrire"

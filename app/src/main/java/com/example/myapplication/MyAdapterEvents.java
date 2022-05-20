@@ -66,7 +66,8 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
         holder.boutonSinscrire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Définir l'action à réaliser ici
+                Mailer.send("euglohsystem@gmail.com","euglohsystemYACINEOUNASILYASS","euglohsystem@gmail.com",
+                        "Demande d'inscription à un evenement","Un étudiant souhaite s'inscrire à l'évenement");
             }
         });
     }
@@ -87,7 +88,7 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
             host = itemView.findViewById(R.id.tvHostEvent);
             dateLimite = itemView.findViewById(R.id.tvDateLimiteEvent);
             description = itemView.findViewById(R.id.tvDesctiptionEvent);
-            boutonSinscrire = itemView.findViewById(R.id.boutonSinscrire);
+            boutonSinscrire = itemView.findViewById(R.id.boutonSinscrireEvent);
         }
     }
 }

@@ -42,44 +42,44 @@
         android:id="@+id/boutonPropositionEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/boutonNews"
-        app:layout_constraintEnd_toEndOf="@+id/boutonNews"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonMenu"
+        app:layout_constraintEnd_toStartOf="@+id/boutonMenu"
         app:srcCompat="@drawable/ic_edit_calendar_fill0_wght400_grad0_opsz48" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/boutonPropositionNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/boutonPropositionEvent"
-        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionEvent"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonPropositionEvent"
+        app:layout_constraintEnd_toStartOf="@+id/boutonPropositionEvent"
         app:srcCompat="@drawable/ic_post_add_fill0_wght400_grad0_opsz48" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/boutonVerifierEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/boutonPropositionNews"
-        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionNews"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonPropositionNews"
+        app:layout_constraintEnd_toStartOf="@+id/boutonPropositionNews"
         app:srcCompat="@drawable/ic_event_available_fill0_wght400_grad0_opsz48" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/boutonVerifierNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/boutonVerifierEvent"
-        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierEvent"
+        app:layout_constraintBottom_toBottomOf="@+id/boutonVerifierEvent"
+        app:layout_constraintEnd_toStartOf="@+id/boutonVerifierEvent"
         app:srcCompat="@drawable/ic_task_fill0_wght400_grad0_opsz48" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -89,100 +89,61 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/boutonVerifierNews"
-        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierNews"
+        app:layout_constraintBottom_toTopOf="@+id/boutonNews"
+        app:layout_constraintEnd_toEndOf="@+id/boutonNews"
         app:srcCompat="@drawable/ic_baseline_exit_to_app_24" />
 
     <LinearLayout
         android:id="@+id/editTextContainer"
         android:layout_width="414dp"
-        android:layout_height="295dp"
+        android:layout_height="130dp"
+        android:gravity="center|center_horizontal|center_vertical"
         android:orientation="vertical"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_player_view"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        app:autoPlay="true"
+        app:layout_constraintBottom_toTopOf="@+id/boutonDeconnexion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>*/
+        app:layout_constraintTop_toBottomOf="@+id/editTextContainer"
+        app:layout_constraintVertical_bias="0.0"
+        app:videoId="38paGBlFn9g"/>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="227dp"
+        android:layout_height="251dp"
+        android:layout_marginTop="68dp"
+        android:rotation="-70"
+        app:layout_constraintBottom_toTopOf="@+id/boutonVerifierNews"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/youtube_player_view"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/img6" />
 
     <TextView
-        android:id="@+id/tvInfo1"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:text="CONSULTER LES EVENEMENTS"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/boutonEvents"
-        app:layout_constraintEnd_toEndOf="@+id/boutonEvents"
-        app:layout_constraintTop_toTopOf="@+id/boutonEvents" />
+        android:id="@+id/textView"
+        android:layout_width="198dp"
+        android:layout_height="68dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:rotation="-10"
+        android:text="ACCEDER AUX FONCTIONNALITEES DE L'APPLICATION !"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/boutonNews"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.188" />
 
-    <TextView
-        android:id="@+id/tvInfo2"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:text="CONSULTER LES NEWS"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/boutonNews"
-        app:layout_constraintEnd_toEndOf="@+id/boutonNews"
-        app:layout_constraintTop_toTopOf="@+id/boutonNews" />
 
-    <TextView
-        android:id="@+id/tvInfo3"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:text="PROPOSER UN EVENEMENT"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/boutonPropositionEvent"
-        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionEvent"
-        app:layout_constraintTop_toTopOf="@+id/boutonPropositionEvent" />
-
-    <TextView
-        android:id="@+id/tvInfo4"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:text="PROPOSER UNE NEWS"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/boutonPropositionNews"
-        app:layout_constraintEnd_toEndOf="@+id/boutonPropositionNews"
-        app:layout_constraintTop_toTopOf="@+id/boutonPropositionNews" />
-
-    <TextView
-        android:id="@+id/tvInfo5"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:text="DECONNEXION"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/boutonDeconnexion"
-        app:layout_constraintEnd_toEndOf="@+id/boutonDeconnexion"
-        app:layout_constraintTop_toTopOf="@+id/boutonDeconnexion" />
-
-    <TextView
-        android:id="@+id/tvInfo6"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:text="VERIFIER UNE NEWS"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/boutonVerifierNews"
-        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierNews"
-        app:layout_constraintTop_toTopOf="@+id/boutonVerifierNews" />
-
-    <TextView
-        android:id="@+id/tvInfo7"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:text="VERIFIER UN EVENEMENT"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/boutonVerifierEvent"
-        app:layout_constraintEnd_toEndOf="@+id/boutonVerifierEvent"
-        app:layout_constraintTop_toTopOf="@+id/boutonVerifierEvent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

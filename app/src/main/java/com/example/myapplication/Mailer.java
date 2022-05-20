@@ -3,6 +3,7 @@ package com.example.myapplication;
 import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
+
 public class Mailer{
     public static void send(String from,String password,String to,String sub,String msg){
         //Get properties object
