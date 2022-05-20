@@ -50,7 +50,7 @@ public class Menu extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            Mailer.send(Utils.EMAIL,Utils.PASSWORD,Utils.EMAIL,"EUGLOH","yo");
+                            Mailer.send("tonmail","tonmdp","tonmail","EUGLOH","yo");
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
