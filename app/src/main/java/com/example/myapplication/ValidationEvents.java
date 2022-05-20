@@ -44,6 +44,7 @@ public class ValidationEvents extends AppCompatActivity {
     Animation rotateOpen, rotateClose, fromBottom, toBottom, fromRight, toRight ;
     FloatingActionButton fb1, fb2, fb3, fb4, fb5, fb6, fb7, deco;
     Boolean clicked = false;
+    UtilisateurConnecte utilisateurConnecte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,8 @@ public class ValidationEvents extends AppCompatActivity {
         fb7 = (FloatingActionButton) findViewById(R.id.boutonVerifierNews);
         deco = (FloatingActionButton) findViewById(R.id.boutonDeconnexion);
 
+        utilisateurConnecte = (UtilisateurConnecte) getIntent().getSerializableExtra("utilisateurConnecte");
+
         recyclerView = findViewById(R.id.recyclerViewValidationEvents);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -75,20 +78,25 @@ public class ValidationEvents extends AppCompatActivity {
         progressDialog.setCancelable(false);
         proposedEventArrayList = new ArrayList<Evenements>();
 
-        if (proposedEventArrayList.size() > 0) {
-            progressDialog.setMessage("Chargement des données ...");
-            progressDialog.show();
-        }
 
         myAdapter = new MyAdapterValidationEvents(ValidationEvents.this, proposedEventArrayList);
         recyclerView.setAdapter(myAdapter);
         EventChangeListener();
+
+        if (proposedEventArrayList.size() > 0) {
+            progressDialog.setMessage("Chargement des données ...");
+            progressDialog.show();
+        }
+        else{
+            Toast.makeText(this, "Aucune proposition d'évenement réalisée", Toast.LENGTH_LONG).show();
+        }
 
         // MENU
         fb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ValidationEvents.this, PageEvenements.class);
+                i.putExtra("utilisateurConnecte", utilisateurConnecte);
                 startActivity(i);
                 finish();
             }
@@ -98,46 +106,51 @@ public class ValidationEvents extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ValidationEvents.this, PageNews.class);
+                i.putExtra("utilisateurConnecte", utilisateurConnecte);
                 startActivity(i);
                 finish();
             }
         });
+        if(utilisateurConnecte.getRole() == Role.Enseignant || utilisateurConnecte.getRole() == Role.Administrateur) {
+            fb4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(ValidationEvents.this, PropositionEvenements.class);
+                    i.putExtra("utilisateurConnecte", utilisateurConnecte);
+                    startActivity(i);
+                    finish();
+                }
+            });
 
-        fb4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ValidationEvents.this, PropositionEvenements.class);
-                startActivity(i);
-                finish();
-            }
-        });
+            fb5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(ValidationEvents.this, PropositionNews.class);
+                    i.putExtra("utilisateurConnecte", utilisateurConnecte);
+                    startActivity(i);
+                    finish();
+                }
+            });
+        }
+        if(utilisateurConnecte.getRole() == Role.Administrateur) {
+            fb6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(ValidationEvents.this, "Vous êtes déjà sur la page de validation d'events !", Toast.LENGTH_SHORT).show();
 
-        fb5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ValidationEvents.this, PropositionNews.class);
-                startActivity(i);
-                finish();
-            }
-        });
+                }
+            });
 
-        fb6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(ValidationEvents.this, "Vous êtes déjà sur la page de validation d'events !", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        fb7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ValidationEvents.this, ValidationNews.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
+            fb7.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(ValidationEvents.this, ValidationNews.class);
+                    i.putExtra("utilisateurConnecte", utilisateurConnecte);
+                    startActivity(i);
+                    finish();
+                }
+            });
+        }
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -206,10 +219,14 @@ public class ValidationEvents extends AppCompatActivity {
         if(!clicked){
             fb2.startAnimation(fromBottom);
             fb3.startAnimation(fromBottom);
-            fb4.startAnimation(fromRight);
-            fb5.startAnimation(fromRight);
-            fb6.startAnimation(fromRight);
-            fb7.startAnimation(fromRight);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.startAnimation(fromRight);
+                fb5.startAnimation(fromRight);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.startAnimation(fromRight);
+                fb7.startAnimation(fromRight);
+            }
             deco.startAnimation(fromBottom);
 
             fb1.startAnimation(rotateOpen);
@@ -217,12 +234,15 @@ public class ValidationEvents extends AppCompatActivity {
         else{
             fb2.startAnimation(toBottom);
             fb3.startAnimation(toBottom);
-            fb4.startAnimation(toRight);
-            fb5.startAnimation(toRight);
-            fb6.startAnimation(toRight);
-            fb7.startAnimation(toRight);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.startAnimation(toRight);
+                fb5.startAnimation(toRight);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.startAnimation(toRight);
+                fb7.startAnimation(toRight);
+            }
             deco.startAnimation(toBottom);
-
             fb1.startAnimation(rotateClose);
         }
     }
@@ -231,12 +251,15 @@ public class ValidationEvents extends AppCompatActivity {
         if(!clicked){
             fb2.setVisibility(View.VISIBLE);
             fb3.setVisibility(View.VISIBLE);
-            fb4.setVisibility(View.VISIBLE);
-            fb5.setVisibility(View.VISIBLE);
-            fb6.setVisibility(View.VISIBLE);
-            fb7.setVisibility(View.VISIBLE);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.setVisibility(View.VISIBLE);
+                fb5.setVisibility(View.VISIBLE);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.setVisibility(View.VISIBLE);
+                fb7.setVisibility(View.VISIBLE);
+            }
             deco.setVisibility(View.VISIBLE);
-
         }
         else{
             fb2.setVisibility(View.INVISIBLE);
@@ -254,10 +277,14 @@ public class ValidationEvents extends AppCompatActivity {
         if(!clicked){
             fb2.setClickable(true);
             fb3.setClickable(true);
-            fb4.setClickable(true);
-            fb5.setClickable(true);
-            fb6.setClickable(true);
-            fb7.setClickable(true);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.setClickable(true);
+                fb5.setClickable(true);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.setClickable(true);
+                fb7.setClickable(true);
+            }
             deco.setClickable(true);
         }
         else{

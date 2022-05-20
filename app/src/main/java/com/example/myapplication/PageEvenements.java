@@ -54,6 +54,7 @@ public class PageEvenements extends AppCompatActivity {
     Animation rotateOpen, rotateClose, fromBottom, toBottom, fromRight, toRight ;
     FloatingActionButton fb1, fb2, fb3, fb4, fb5, fb6, fb7, deco;
     Boolean clicked = false;
+    UtilisateurConnecte utilisateurConnecte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,8 @@ public class PageEvenements extends AppCompatActivity {
         fb6 = (FloatingActionButton) findViewById(R.id.boutonVerifierEvent);
         fb7 = (FloatingActionButton) findViewById(R.id.boutonVerifierNews);
         deco = (FloatingActionButton) findViewById(R.id.boutonDeconnexion);
+
+        utilisateurConnecte = (UtilisateurConnecte) getIntent().getSerializableExtra("utilisateurConnecte");
 
         // Suppression de tout les evenements stocké dans FireStore
         db.collection("Events").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -202,7 +205,7 @@ public class PageEvenements extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         eventArrayList = new ArrayList<Evenements>();
-        myAdapter = new MyAdapterEvents(PageEvenements.this, eventArrayList);
+        myAdapter = new MyAdapterEvents(PageEvenements.this, eventArrayList, utilisateurConnecte);
 
         recyclerView.setAdapter(myAdapter);
         EventChangeListener();
@@ -211,7 +214,7 @@ public class PageEvenements extends AppCompatActivity {
         fb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PageEvenements.this, "Vous êtes déjà sur la page des evenements !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PageEvenements.this, "Vous êtes déjà sur la page des evenements !", Toast.LENGTH_SHORT);
             }
         });
 
@@ -219,47 +222,53 @@ public class PageEvenements extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(PageEvenements.this, PageNews.class);
+                i.putExtra("utilisateurConnecte", utilisateurConnecte);
                 startActivity(i);
                 finish();
             }
         });
+        if(utilisateurConnecte.getRole() == Role.Enseignant || utilisateurConnecte.getRole() == Role.Administrateur) {
+            fb4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(PageEvenements.this, PropositionEvenements.class);
+                    i.putExtra("utilisateurConnecte", utilisateurConnecte);
+                    startActivity(i);
+                    finish();
+                }
+            });
 
-        fb4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(PageEvenements.this, PropositionEvenements.class);
-                startActivity(i);
-                finish();
-            }
-        });
+            fb5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(PageEvenements.this, PropositionNews.class);
+                    i.putExtra("utilisateurConnecte", utilisateurConnecte);
+                    startActivity(i);
+                    finish();
+                }
+            });
+        }
+        if(utilisateurConnecte.getRole() == Role.Administrateur) {
+            fb6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(PageEvenements.this, ValidationEvents.class);
+                    i.putExtra("utilisateurConnecte", utilisateurConnecte);
+                    startActivity(i);
+                    finish();
+                }
+            });
 
-        fb5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(PageEvenements.this, PropositionNews.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
-        fb6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(PageEvenements.this, ValidationEvents.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
-        fb7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(PageEvenements.this, ValidationNews.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
+            fb7.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(PageEvenements.this, ValidationNews.class);
+                    i.putExtra("utilisateurConnecte", utilisateurConnecte);
+                    startActivity(i);
+                    finish();
+                }
+            });
+        }
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -323,7 +332,6 @@ public class PageEvenements extends AppCompatActivity {
                     dataR = dataR.replaceAll("RegistrationOpen", "");
                 else
                     dataR = dataR.replaceAll("RegistrationClosed", "");
-                Log.d("test", dataR);
                 dl = dataR;
             }
 
@@ -419,10 +427,14 @@ public class PageEvenements extends AppCompatActivity {
         if(!clicked){
             fb2.startAnimation(fromBottom);
             fb3.startAnimation(fromBottom);
-            fb4.startAnimation(fromRight);
-            fb5.startAnimation(fromRight);
-            fb6.startAnimation(fromRight);
-            fb7.startAnimation(fromRight);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.startAnimation(fromRight);
+                fb5.startAnimation(fromRight);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.startAnimation(fromRight);
+                fb7.startAnimation(fromRight);
+            }
             deco.startAnimation(fromBottom);
 
             fb1.startAnimation(rotateOpen);
@@ -430,12 +442,15 @@ public class PageEvenements extends AppCompatActivity {
         else{
             fb2.startAnimation(toBottom);
             fb3.startAnimation(toBottom);
-            fb4.startAnimation(toRight);
-            fb5.startAnimation(toRight);
-            fb6.startAnimation(toRight);
-            fb7.startAnimation(toRight);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.startAnimation(toRight);
+                fb5.startAnimation(toRight);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.startAnimation(toRight);
+                fb7.startAnimation(toRight);
+            }
             deco.startAnimation(toBottom);
-
             fb1.startAnimation(rotateClose);
         }
     }
@@ -444,12 +459,15 @@ public class PageEvenements extends AppCompatActivity {
         if(!clicked){
             fb2.setVisibility(View.VISIBLE);
             fb3.setVisibility(View.VISIBLE);
-            fb4.setVisibility(View.VISIBLE);
-            fb5.setVisibility(View.VISIBLE);
-            fb6.setVisibility(View.VISIBLE);
-            fb7.setVisibility(View.VISIBLE);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.setVisibility(View.VISIBLE);
+                fb5.setVisibility(View.VISIBLE);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.setVisibility(View.VISIBLE);
+                fb7.setVisibility(View.VISIBLE);
+            }
             deco.setVisibility(View.VISIBLE);
-
         }
         else{
             fb2.setVisibility(View.INVISIBLE);
@@ -467,10 +485,14 @@ public class PageEvenements extends AppCompatActivity {
         if(!clicked){
             fb2.setClickable(true);
             fb3.setClickable(true);
-            fb4.setClickable(true);
-            fb5.setClickable(true);
-            fb6.setClickable(true);
-            fb7.setClickable(true);
+            if(utilisateurConnecte.getRole() == Role.Administrateur || utilisateurConnecte.getRole() == Role.Enseignant) {
+                fb4.setClickable(true);
+                fb5.setClickable(true);
+            }
+            if(utilisateurConnecte.getRole() == Role.Administrateur) {
+                fb6.setClickable(true);
+                fb7.setClickable(true);
+            }
             deco.setClickable(true);
         }
         else{

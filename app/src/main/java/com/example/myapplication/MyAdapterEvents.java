@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,15 +23,18 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyViewHolder> {
     Context context;
     ArrayList<Evenements> eventArrayList;
     FirebaseFirestore db;
+    UtilisateurConnecte utilisateurConnecte;
 
-    public MyAdapterEvents(Context context, ArrayList<Evenements> eventArrayList) {
+    public MyAdapterEvents(Context context, ArrayList<Evenements> eventArrayList, UtilisateurConnecte utilisateurConnecte) {
         this.context = context;
         this.eventArrayList = eventArrayList;
+        this.utilisateurConnecte = utilisateurConnecte;
         db = FirebaseFirestore.getInstance();
     }
 
@@ -53,6 +57,10 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
         holder.dateLimite.setText(evenements.dateLimite);
         holder.description.setText(evenements.description);
 
+        String nom = utilisateurConnecte.getNom();
+        String prenom = utilisateurConnecte.getPrenom();
+        String mail = utilisateurConnecte.getEmail();
+
         // Clique sur le lien de description d'un evenement
         holder.description.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,24 +70,32 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
             }
         });
 
-        // Clique sur le bouton d'inscription à un evenement
-        holder.boutonSinscrire.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Thread gfgThread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try  {
-                            Mailer.send("euglohsystem@gmail.com","euglohsystemYACINEOUNASILYASS","ounasyhia27@gmail.com","Demande d'inscription à un evenement","Un étudiant souhaite s'inscrire à l'évenement");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
+            // Clique sur le bouton d'inscription à un evenement
+            holder.boutonSinscrire.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(prenom != "") {
+                        Thread gfgThread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
 
-                gfgThread.start();
-            }
-        });
+                                    Mailer.send("euglohsystem@gmail.com", "euglohsystemYACINEOUNASILYASS", "ounasyhia27@gmail.com", "Demande d'inscription à un evenement",
+                                            "L'étudiant " + nom.toUpperCase() + " " + prenom + " souhaite s'inscrire à l'évenement suivant : " + evenements.getTitre());
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+
+                        gfgThread.start();
+                        Toast.makeText(context, "Demande d'inscription envoyée !", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(context, "Connectez-vous pour vous inscrire !", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
     }
 
     @Override

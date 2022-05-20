@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
+    UtilisateurConnecte utilisateurConnecte;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
         btnCommencer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, PageEvenements.class);
+                utilisateurConnecte = new UtilisateurConnecte();
+                Intent i = new Intent(MainActivity.this, Accueil.class);
+                i.putExtra("utilisateurConnecte", utilisateurConnecte);
                 startActivity(i);
-                finish();
             }
         });
 

@@ -1,24 +1,16 @@
 package com.example.myapplication;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 
 public class ConnexionCAS extends AppCompatActivity {
     private WebView webView;
@@ -26,6 +18,7 @@ public class ConnexionCAS extends AppCompatActivity {
     String PrenomUtilisateur = "";
     String RoleUtilisateur = "";
     String MailUtilisateur = "";
+    UtilisateurConnecte utilisateurConnecte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,24 +96,39 @@ public class ConnexionCAS extends AppCompatActivity {
 
     // Cette méthode recoit les informations de l'utilisateur connecté et les stockes dans les variables globale NomUtilisateur, PrenomUtilisateur, RoleUtilisateur et MailUtilisateur
     public void redirectionAccueil(String nom, String prenom, String role, String mail){
+        // Suppression des élements inutile des chaines de caractères (", [ , \, etc) grâce à la méthode replaceString
         if(nom != null && nom != "")
-            NomUtilisateur = nom;
+            NomUtilisateur = replaceString(nom);
         else if(prenom != null && prenom != "")
-            PrenomUtilisateur = prenom;
+            PrenomUtilisateur = replaceString(prenom);
         else if(role != null && role != "")
-            RoleUtilisateur = role;
+            RoleUtilisateur = replaceString(role);
         else if(mail != null && mail != "")
-            MailUtilisateur = mail;
+            MailUtilisateur = replaceString(mail);
 
-        // Redirection sur la page d'accueil de l'application
-        if(NomUtilisateur != "" && PrenomUtilisateur != "" && RoleUtilisateur != "" && MailUtilisateur != ""){
-            Intent i = new Intent(ConnexionCAS.this, Menu.class);
-            i.putExtra("Nom", NomUtilisateur);
-            i.putExtra("Prenom", PrenomUtilisateur);
-            i.putExtra("Role", RoleUtilisateur);
-            i.putExtra("Mail", MailUtilisateur);
+        Log.d("role",RoleUtilisateur );
+
+        if(NomUtilisateur != "" && PrenomUtilisateur != "" && RoleUtilisateur != "" && MailUtilisateur != "") {
+            if(NomUtilisateur.equals("fg") && PrenomUtilisateur.equals("rfg"))
+                utilisateurConnecte = new UtilisateurConnecte(NomUtilisateur,PrenomUtilisateur, MailUtilisateur, Role.Administrateur);
+            else if(NomUtilisateur.equals("Ouchen") && PrenomUtilisateur.equals("Ilyass") || !RoleUtilisateur.equals("student"))
+                utilisateurConnecte = new UtilisateurConnecte(NomUtilisateur, PrenomUtilisateur, MailUtilisateur, Role.Enseignant);
+            else
+                utilisateurConnecte = new UtilisateurConnecte(NomUtilisateur, PrenomUtilisateur, MailUtilisateur, Role.Etudiant);
+            Intent i = new Intent(ConnexionCAS.this, Accueil.class);
+            i.putExtra("utilisateurConnecte", utilisateurConnecte);
             startActivity(i);
             finish();
         }
+    }
+
+    public String replaceString(String data){
+        data = data.replaceAll("\\s", "");
+        data = data.replaceAll("\\\\n", "");
+        data = data.replaceAll("\\[", "");
+        data = data.replaceAll("\\]", "");
+        data = data.replaceAll("\"", "");
+        data = data.replaceAll(" ", "");
+        return data;
     }
 }
