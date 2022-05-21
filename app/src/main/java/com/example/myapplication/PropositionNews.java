@@ -84,7 +84,7 @@ public class PropositionNews extends AppCompatActivity {
                                 description.getText().clear();
 
                                 Context context = getApplicationContext();
-                                CharSequence text = "Proposition réalisée avec succés !";
+                                CharSequence text = getResources().getString(R.string.proposition);
                                 int duration = Toast.LENGTH_SHORT;
 
                                 // Affichage d'un message de succés
@@ -102,7 +102,7 @@ public class PropositionNews extends AppCompatActivity {
 
                                 // Affichage d'un message d'erreur
                                 Context context = getApplicationContext();
-                                CharSequence text = "Une erreur s'est produite, veuillez réessayer";
+                                CharSequence text = getResources().getString(R.string.erreur);
                                 int duration = Toast.LENGTH_SHORT;
 
                                 Toast toast = Toast.makeText(context, text, duration);
@@ -146,7 +146,7 @@ public class PropositionNews extends AppCompatActivity {
             fb5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(PropositionNews.this, "Vous êtes déjà sur la page de proposition de news !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PropositionNews.this, R.string.dejanews, Toast.LENGTH_SHORT).show();
                 }
             });
         }

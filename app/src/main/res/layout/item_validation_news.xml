@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Titre :"
+                android:text="@string/titre_item"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -45,7 +45,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date :"
+                android:text="@string/date_item"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -67,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Description :"
+                android:text="@string/description_item"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -81,19 +81,31 @@
                 android:textSize="13sp"
                 android:layout_marginBottom="5dp"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/boutonValiderNews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Valider"
-            app:backgroundTint="@color/light_blue_900"/>
 
-        <Button
-            android:id="@+id/boutonRefuserNews"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Refuser"
-            app:backgroundTint="@color/light_blue_900"/>
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/boutonValiderNews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/valider"
+                app:backgroundTint="@color/light_blue_900" />
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+            <Button
+                android:id="@+id/boutonRefuserNews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refuser"
+                app:backgroundTint="@color/light_blue_900" />
+        </LinearLayout>
 
     </LinearLayout>
 

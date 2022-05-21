@@ -197,7 +197,7 @@ public class PageEvenements extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Chargement des données ...");
+        progressDialog.setMessage(getResources().getString(R.string.chargement));
         progressDialog.show();
 
         recyclerView = findViewById(R.id.recyclerViewEvents);
@@ -214,7 +214,7 @@ public class PageEvenements extends AppCompatActivity {
         fb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PageEvenements.this, "Vous êtes déjà sur la page des evenements !", Toast.LENGTH_SHORT);
+                Toast.makeText(PageEvenements.this, R.string.deja, Toast.LENGTH_SHORT);
             }
         });
 

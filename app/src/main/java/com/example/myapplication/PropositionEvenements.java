@@ -91,9 +91,8 @@ public class PropositionEvenements extends AppCompatActivity {
                 String sHost = hebergeur.getText().toString();
                 String sDatelimite = datelimite.getText().toString();
                 String sDescription = description.getText().toString();
-                Boolean sValide = false;
 
-                Evenements evenements = new Evenements(sTitre, sDate, sLocalisation, sGroupeCible, sHost, sDatelimite, sDescription, sValide);
+                Evenements evenements = new Evenements(sTitre, sDate, sLocalisation, sGroupeCible, sHost, sDatelimite, sDescription);
                 // Ajout de l'evenement à FireStore
                 db.collection("ProposedEvents")
                         .add(evenements)
@@ -110,7 +109,7 @@ public class PropositionEvenements extends AppCompatActivity {
                                 description.getText().clear();
 
                                 Context context = getApplicationContext();
-                                CharSequence text = "Proposition réalisée avec succés !";
+                                CharSequence text = getResources().getString(R.string.proposition);
                                 int duration = Toast.LENGTH_SHORT;
 
                                 // Affichage d'un message de succés
@@ -132,7 +131,7 @@ public class PropositionEvenements extends AppCompatActivity {
 
                                 // Affichage d'un message d'erreur
                                 Context context = getApplicationContext();
-                                CharSequence text = "Une erreur s'est produite, veuillez réessayer";
+                                CharSequence text = getResources().getString(R.string.erreur);
                                 int duration = Toast.LENGTH_SHORT;
 
                                 Toast toast = Toast.makeText(context, text, duration);
@@ -166,7 +165,7 @@ public class PropositionEvenements extends AppCompatActivity {
             fb4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(PropositionEvenements.this, "Vous êtes déjà sur la page de proposition d'events !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PropositionEvenements.this, R.string.dejaevent, Toast.LENGTH_SHORT).show();
                 }
             });
 

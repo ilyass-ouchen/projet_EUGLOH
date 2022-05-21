@@ -65,7 +65,7 @@ public class MyAdapterValidationNews extends RecyclerView.Adapter<MyAdapterValid
                                     notifyDataSetChanged();
                                 }
                             }
-                            Toast.makeText(context, "News accepté avec succés !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, R.string.news, Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Log.d(TAG, "Une erreur s'est produite: ", task.getException());
@@ -92,7 +92,7 @@ public class MyAdapterValidationNews extends RecyclerView.Adapter<MyAdapterValid
                                     notifyDataSetChanged();
                                 }
                             }
-                            Toast.makeText(context, "Evenement refusé !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, R.string.newsR, Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Log.d(TAG, "Une erreur s'est produite: ", task.getException());

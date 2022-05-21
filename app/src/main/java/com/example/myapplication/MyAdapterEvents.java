@@ -76,7 +76,7 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
                 @Override
                 public void onClick(View view) {
                     if(role==Role.Enseignant){
-                        Toast.makeText(context, "Seul les étudiants peuvents s'inscrire !", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, R.string.t1, Toast.LENGTH_SHORT).show();
                     }
                     else if(prenom != "") {
                         Thread gfgThread = new Thread(new Runnable() {
@@ -92,10 +92,10 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
                         });
 
                         gfgThread.start();
-                        Toast.makeText(context, "Demande d'inscription envoyée !", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, R.string.t2, Toast.LENGTH_LONG).show();
                     }
                     else{
-                        Toast.makeText(context, "Connectez-vous pour vous inscrire !", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, R.string.t3, Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -109,7 +109,7 @@ public class ConnexionCAS extends AppCompatActivity {
         Log.d("role",RoleUtilisateur );
 
         if(NomUtilisateur != "" && PrenomUtilisateur != "" && RoleUtilisateur != "" && MailUtilisateur != "") {
-            if(NomUtilisateur.equals("fg") && PrenomUtilisateur.equals("rfg"))
+            if(NomUtilisateur.equals("Yhia") && PrenomUtilisateur.equals("Ounas"))
                 utilisateurConnecte = new UtilisateurConnecte(NomUtilisateur,PrenomUtilisateur, MailUtilisateur, Role.Administrateur);
             else if(NomUtilisateur.equals("Ouchen") && PrenomUtilisateur.equals("Ilyass") || !RoleUtilisateur.equals("student"))
                 utilisateurConnecte = new UtilisateurConnecte(NomUtilisateur, PrenomUtilisateur, MailUtilisateur, Role.Enseignant);

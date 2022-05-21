@@ -74,11 +74,8 @@ public class ValidationNews extends AppCompatActivity {
         NewsChangeListener();
 
         if (proposedNewsArrayList.size() > 0) {
-            progressDialog.setMessage("Chargement des données ...");
+            progressDialog.setMessage(getResources().getString(R.string.chargement));
             progressDialog.show();
-        }
-        else{
-            Toast.makeText(this, "Aucune proposition de news réalisée", Toast.LENGTH_LONG).show();
         }
 
         // MENU
@@ -137,7 +134,7 @@ public class ValidationNews extends AppCompatActivity {
             fb7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(ValidationNews.this, "Vous êtes déjà sur la page de validation de news !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ValidationNews.this, R.string.validenews, Toast.LENGTH_SHORT).show();
                 }
             });
         }

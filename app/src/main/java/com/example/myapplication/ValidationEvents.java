@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -31,9 +34,11 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class ValidationEvents extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -45,7 +50,7 @@ public class ValidationEvents extends AppCompatActivity {
     FloatingActionButton fb1, fb2, fb3, fb4, fb5, fb6, fb7, deco;
     Boolean clicked = false;
     UtilisateurConnecte utilisateurConnecte;
-
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,11 +89,8 @@ public class ValidationEvents extends AppCompatActivity {
         EventChangeListener();
 
         if (proposedEventArrayList.size() > 0) {
-            progressDialog.setMessage("Chargement des données ...");
+            progressDialog.setMessage(getResources().getString(R.string.chargement));
             progressDialog.show();
-        }
-        else{
-            Toast.makeText(this, "Aucune proposition d'évenement réalisée", Toast.LENGTH_LONG).show();
         }
 
         // MENU
@@ -136,7 +138,7 @@ public class ValidationEvents extends AppCompatActivity {
             fb6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(ValidationEvents.this, "Vous êtes déjà sur la page de validation d'events !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ValidationEvents.this, R.string.validevent, Toast.LENGTH_SHORT).show();
 
                 }
             });

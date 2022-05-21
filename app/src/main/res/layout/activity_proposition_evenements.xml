@@ -24,7 +24,7 @@
             android:id="@+id/editTextTitreEvents"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="Titre"
+            android:hint="@string/titre"
             android:inputType="textPersonName" />
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="Localisation"
+            android:hint="@string/localisation"
             android:inputType="textPersonName" />
 
         <EditText
@@ -40,7 +40,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="Groupe cible"
+            android:hint="@string/groupe_cible"
             android:inputType="textPersonName" />
 
         <EditText
@@ -48,7 +48,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="Host"
+            android:hint="@string/host"
             android:inputType="textPersonName" />
 
         <EditText
@@ -64,7 +64,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="Date Limite"
+            android:hint="@string/date_limite"
             android:inputType="textPersonName" />
 
         <EditText
@@ -72,7 +72,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="Decription"
+            android:hint="@string/description"
             android:inputType="textPersonName" />
 
         <Button
@@ -84,7 +84,7 @@
             android:elevation="4dp"
             android:paddingLeft="70dp"
             android:paddingRight="70dp"
-            android:text="Proposer l'evenement"
+            android:text="@string/proposer_events"
             android:textColor="#fff"
             app:backgroundTint="@color/light_blue_900" />
     </LinearLayout>

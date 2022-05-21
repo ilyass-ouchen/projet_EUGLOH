@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,7 +32,9 @@ public class Accueil extends AppCompatActivity {
     FloatingActionButton fb1, fb2, fb3, fb4, fb5, fb6, fb7, deco;
     Boolean clicked = false;
     UtilisateurConnecte utilisateurConnecte;
-
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TEXT = "text";
+    public static final String BT1 = "BTFR";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,7 +169,7 @@ public class Accueil extends AppCompatActivity {
             tvAccueil.setTextSize(30);
         }
         else {
-            tvAccueil.setHint("Bienvenue sur EuglohApp ! Vous n'êtes connecté à aucun compte. Vos droits sont donc limités !");
+            tvAccueil.setHint(getResources().getString(R.string.bien));
             tvAccueil.setTextSize(20);
         }
         tvAccueil.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));

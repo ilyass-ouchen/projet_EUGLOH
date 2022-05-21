@@ -168,7 +168,7 @@ public class PageNews extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Chargement des données ...");
+        progressDialog.setMessage(getResources().getString(R.string.chargement));
         progressDialog.show();
 
         recyclerView = findViewById(R.id.recyclerViewNews);
@@ -195,7 +195,7 @@ public class PageNews extends AppCompatActivity {
         fb3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PageNews.this, "Vous êtes déjà sur la page des news !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PageNews.this, R.string.deja2, Toast.LENGTH_SHORT).show();
             }
         });
         if(utilisateurConnecte.getRole() == Role.Enseignant || utilisateurConnecte.getRole() == Role.Administrateur) {

@@ -3,7 +3,9 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -19,6 +21,9 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     UtilisateurConnecte utilisateurConnecte;
+    TextView tvBienvenue;
+    Button btnCommencer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageButton btnConnexion = findViewById(R.id.boutonConnexion);
-        Button btnCommencer = findViewById(R.id.boutonCommencer);
+        btnCommencer = findViewById(R.id.boutonCommencer);
         ImageButton langueFR = findViewById(R.id.imageLangueFr);
         ImageButton langueEN = findViewById(R.id.imageLangueAng);
+        tvBienvenue = findViewById(R.id.tvBienvenue);
 
         // Clique sur le bouton de connexion
         btnConnexion.setOnClickListener(new View.OnClickListener() {
@@ -51,15 +57,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        langueFR.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String language = "fr";
+                    setLocale(language);
+
+                }
+        }
+        );
 
         langueEN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String language = "en";
-                setLocale(language);
+                @Override
+                public void onClick(View view) {
+                   String language = "en";
+                    setLocale(language);
+                }
             }
-        }
-
         );
     }
 
@@ -75,5 +89,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        tvBienvenue.setText(getString(R.string.accueil_titre));
+        btnCommencer.setText(getString(R.string.commencer));
     }
 }

@@ -59,7 +59,7 @@ public class MyAdapterValidationEvents extends RecyclerView.Adapter<MyAdapterVal
         holder.bouttonAccepter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Evenements evt = new Evenements(evenements.getTitre(), evenements.getDate(), evenements.getLocalisation(), evenements.getGroupeCible(),
-                        evenements.getHost(), evenements.getDateLimite(), evenements.getDescription(), evenements.getValide());
+                        evenements.getHost(), evenements.getDateLimite(), evenements.getDescription());
                 db.collection("AcceptedEvents").add(evt);
                 db.collection("ProposedEvents").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -73,7 +73,7 @@ public class MyAdapterValidationEvents extends RecyclerView.Adapter<MyAdapterVal
                                     notifyDataSetChanged();
                                 }
                             }
-                            Toast.makeText(context, "Evenement accepté avec succés !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, R.string.event, Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Log.d(TAG, "Une erreur s'est produite: ", task.getException());
@@ -100,7 +100,7 @@ public class MyAdapterValidationEvents extends RecyclerView.Adapter<MyAdapterVal
                                     notifyDataSetChanged();
                                 }
                             }
-                            Toast.makeText(context, "Evenement refusé !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, R.string.eventR, Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Log.d(TAG, "Une erreur s'est produite: ", task.getException());
