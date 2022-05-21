@@ -51,7 +51,7 @@
         android:layout_width="162dp"
         android:layout_height="53dp"
         android:background="@color/light_blue_900"
-        android:text="Commencer"
+        android:text="@string/commencer"
         app:backgroundTint="@color/light_blue_900"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

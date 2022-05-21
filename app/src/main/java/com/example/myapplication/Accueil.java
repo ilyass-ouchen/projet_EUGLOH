@@ -162,7 +162,7 @@ public class Accueil extends AppCompatActivity {
         LinearLayout linearLayout = findViewById(R.id.editTextContainer);
         TextView tvAccueil = new TextView(this);
         if(utilisateurConnecte.getPrenom()!="") {
-            tvAccueil.setHint("Bienvenue sur EuglohApp " + nom.toUpperCase() + " " + prenom);
+            tvAccueil.setHint(getResources().getString(R.string.bienvenue) + "\n" + nom.toUpperCase() + " " + prenom);
             tvAccueil.setTextSize(30);
         }
         else {

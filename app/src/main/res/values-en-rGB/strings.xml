@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">EUGLOH App</string>
-    <string name="accueil_titre">Bienvenue sur EUGLOH APP \n Campus Université \n Paris-Saclay</string>
+    <string name="accueil_titre">"Welcome to EUGLOH APP Campus University Paris-Saclay "</string>
+    <string name="accueil_message">ACCESS APP FEATURES!</string>
+    <string name="commencer">Start</string>
+    <string name="titre">Title</string>
+    <string name="localisation">Location</string>
+    <string name="groupe_cible">Target group</string>
+    <string name="date">Date</string>
+    <string name="decription">Decription</string>
+    <string name="proposer_events">Propose event</string>
+    <string name="date_news">Date</string>
+    <string name="titre_item">Title :</string>
+    <string name="date_item">Date :</string>
+    <string name="localisation_item">Location :</string>
+    <string name="groupe_item">Target group :</string>
+    <string name="host_item">Host :</string>
+    <string name="date_limite_item">DeadLine :</string>
+    <string name="description_item">Description :</string>
+    <string name="sinscrire">register</string>
+    <string name="valider">Validate</string>
+    <string name="refuser">declin</string>
+    <string name="host">Host</string>
+    <string name="description_news">Description</string>
+    <string name="proposer_news">Propose News</string>
+    <string name="bienvenue">Welcome in EuglohApp</string>
+
 </resources>

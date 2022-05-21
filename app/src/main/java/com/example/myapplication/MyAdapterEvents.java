@@ -60,6 +60,7 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
         String nom = utilisateurConnecte.getNom();
         String prenom = utilisateurConnecte.getPrenom();
         String mail = utilisateurConnecte.getEmail();
+        Role role = utilisateurConnecte.getRole();
 
         // Clique sur le lien de description d'un evenement
         holder.description.setOnClickListener(new View.OnClickListener() {
@@ -74,14 +75,16 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
             holder.boutonSinscrire.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(prenom != "") {
+                    if(role==Role.Enseignant){
+                        Toast.makeText(context, "Seul les étudiants peuvents s'inscrire !", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(prenom != "") {
                         Thread gfgThread = new Thread(new Runnable() {
                             @Override
                             public void run() {
                                 try {
-
-                                    Mailer.send("euglohsystem@gmail.com", "euglohsystemYACINEOUNASILYASS", "ounasyhia27@gmail.com", "Demande d'inscription à un evenement",
-                                            "L'étudiant " + nom.toUpperCase() + " " + prenom + " souhaite s'inscrire à l'évenement suivant : " + evenements.getTitre());
+                                    Mailer.send("euglohsystem@gmail.com", "euglohsystemYACINEOUNASILYASS", "ounas.yhia@universite-paris-saclay.fr", "Demande d'inscription à un evenement",
+                                            "L'étudiant " + nom.toUpperCase() + " " + prenom + " souhaite s'inscrire à l'évènement suivant : " + evenements.getTitre());
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }

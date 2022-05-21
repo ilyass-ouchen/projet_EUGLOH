@@ -1,5 +1,27 @@
 <resources>
     <string name="app_name">EUGLOH App</string>
     <string name="accueil_titre">Bienvenue sur EUGLOH APP \n Campus Université \n Paris-Saclay</string>
-
+    <string name="accueil_message">ACCEDER AUX FONCTIONNALITEES DE L\'APPLICATION !</string>
+    <string name="commencer">Commencer</string>
+    <string name="titre">Titre</string>
+    <string name="localisation">Localisation</string>
+    <string name="groupe_cible">Groupe cible</string>
+    <string name="host">Host</string>
+    <string name="date">Date</string>
+    <string name="decription">Decription</string>
+    <string name="proposer_events">Proposer l\'evenement</string>
+    <string name="date_news">Date</string>
+    <string name="description_news">Description</string>
+    <string name="proposer_news">Proposer la news</string>
+    <string name="titre_item">Titre :</string>
+    <string name="date_item">Date :</string>
+    <string name="localisation_item">Localisation :</string>
+    <string name="groupe_item">Groupe Cible :</string>
+    <string name="host_item">Host :</string>
+    <string name="date_limite_item">Date Limite :</string>
+    <string name="description_item">Description :</string>
+    <string name="sinscrire">S\'inscrire</string>
+    <string name="valider">Valider</string>
+    <string name="refuser">Refuser</string>
+    <string name="bienvenue">Bienvenue sur EuglohApp</string>
 </resources>

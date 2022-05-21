@@ -1,14 +1,21 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.PointerIcon;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     UtilisateurConnecte utilisateurConnecte;
@@ -21,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton btnConnexion = findViewById(R.id.boutonConnexion);
         Button btnCommencer = findViewById(R.id.boutonCommencer);
+        ImageButton langueFR = findViewById(R.id.imageLangueFr);
+        ImageButton langueEN = findViewById(R.id.imageLangueAng);
 
         // Clique sur le bouton de connexion
         btnConnexion.setOnClickListener(new View.OnClickListener() {
@@ -43,5 +52,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        langueEN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String language = "en";
+                setLocale(language);
+            }
+        }
+
+        );
+    }
+
+    private void setLocale(String language) {
+        Resources resources = getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        Configuration configuration = resources.getConfiguration();
+        configuration.locale = new Locale(language);
+        resources.updateConfiguration(configuration,metrics);
+        onConfigurationChanged(configuration);
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }
