@@ -95,7 +95,7 @@
 
     <LinearLayout
         android:id="@+id/editTextContainer"
-        android:layout_width="414dp"
+        android:layout_width="0dp"
         android:layout_height="130dp"
         android:gravity="center|center_horizontal|center_vertical"
         android:orientation="vertical"

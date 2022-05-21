@@ -170,10 +170,9 @@ public class Accueil extends AppCompatActivity {
         }
         else {
             tvAccueil.setHint(getResources().getString(R.string.bien));
-            tvAccueil.setTextSize(20);
+            tvAccueil.setTextSize(25);
         }
         tvAccueil.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        tvAccueil.setPadding(0, 20, 60, 20);
         tvAccueil.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         tvAccueil.setTypeface(null, Typeface.BOLD_ITALIC);
 
