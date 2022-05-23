@@ -83,7 +83,7 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.MyView
                             @Override
                             public void run() {
                                 try {
-                                    Mailer.send("euglohsystem@gmail.com", "euglohsystemYACINEOUNASILYASS", "ounas.yhia@universite-paris-saclay.fr", "Demande d'inscription à un evenement",
+                                    Mailer.send("euglohsystem@gmail.com", "euglohsystemYACINEOUNASILYASS", "burkhart.wolff@universite-paris-saclay.fr", "Demande d'inscription à un evenement",
                                             "L'étudiant " + nom.toUpperCase() + " " + prenom + " souhaite s'inscrire à l'évènement suivant : " + evenements.getTitre());
                                 } catch (Exception e) {
                                     e.printStackTrace();
